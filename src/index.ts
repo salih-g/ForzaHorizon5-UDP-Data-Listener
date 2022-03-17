@@ -23,10 +23,9 @@ udp.on('message', (msg: Buffer) => {
 });
 
 io.on('connection', (socket: any) => {
-	console.log(socket.id);
-	ss(socket).on('data', (stream: any) => {
-		stream.pipe(fs.createWriteStream(forzaData));
-	});
+	setInterval(() => {
+		io.sockets.emit('data', forzaData);
+	}, 50);
 });
 
 udp.bind(FORZAPORT);
