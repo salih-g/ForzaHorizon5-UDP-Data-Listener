@@ -3,12 +3,18 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"license": "MIT",
-	"dependencies": {},
+	"dependencies": {
+		"express": "^4.17.3",
+		"socket.io": "^4.4.1",
+		"socket.io-stream": "^0.9.1"
+	},
 	"scripts": {
 		"dev": "nodemon ./src/index.ts"
 	},
 	"devDependencies": {
+		"@types/express": "^4.17.13",
 		"@types/node": "^17.0.21",
+		"@types/socket.io": "^3.0.2",
 		"nodemon": "^2.0.15",
 		"ts-node": "^10.7.0",
 		"typescript": "^4.6.2"

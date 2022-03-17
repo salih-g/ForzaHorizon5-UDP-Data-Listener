@@ -35,7 +35,6 @@ class Parser {
   format: ParserFormat[];
 
   constructor (formatName: TelemetryFormat) {
-    console.log('cwd', process.cwd());
     const filename = `./formats/${formatName}.format.json`;
     if (!fs.existsSync(filename)) throw new Error(`Unknown format: ${formatName}`);
     const formatJson = fs.readFileSync(filename);
