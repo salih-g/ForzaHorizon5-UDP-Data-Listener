@@ -1,7 +1,6 @@
 import dgram from 'dgram';
 import express from 'express';
 import path from 'path';
-import fs from 'fs';
 import Parser from './Parser';
 
 const FORZAPORT = 5300;
@@ -13,7 +12,6 @@ const app = express();
 const server = app.listen(PORT);
 const parser = new Parser('ForzaHorizon5');
 const io = require('socket.io')(server);
-const ss = require('socket.io-stream');
 let forzaData: any;
 
 app.use(express.static(publicPath));
@@ -31,4 +29,5 @@ io.on('connection', (socket: any) => {
 udp.bind(FORZAPORT);
 server.on('listening', () => {
 	console.log('Server on listening...');
+	console.log('Dashboard on http://localhost:8080');
 });
